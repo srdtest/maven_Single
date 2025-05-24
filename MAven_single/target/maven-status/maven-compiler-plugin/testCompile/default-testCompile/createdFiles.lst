@@ -1,0 +1,8 @@
+maven_diares\MAven_single\BaseTest.class
+maven_diares\MAven_single\EndtoEndapplicationTestcases.class
+maven_diares\MAven_single\EndtoEndapplicationTestcasesTest.class
+maven_diares\MAven_single\HomePage.class
+maven_diares\MAven_single\TitleTest.class
+maven_diares\MAven_single\HomePageTest.class
+maven_diares\MAven_single\ScreenshotUtility.class
+maven_diares\MAven_single\TestListener.class

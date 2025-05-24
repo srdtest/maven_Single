@@ -1,10 +1,46 @@
 package maven_diares.MAven_single;
-
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class EndtoEndapplicationTestcases {
 
+	@BeforeSuite
+	public void setup() {
+		// Code to set up the test environment
+		System.out.println("Setting up the test environment.");
+	}
 	
+	@BeforeTest
+	public void initialize() {
+		// Code to initialize resources before tests
+		System.out.println("Initializing resources before tests.");
+	}
+	@BeforeClass
+	public void beforeClass() {
+		// Code to run before any test methods in this class
+		System.out.println("Running before class setup.");
+	}
+	@BeforeMethod
+	public void beforeMethod() {
+		// Code to run before each test method
+		System.out.println("Running before each test method.");
+	}
 	@Test
 	public void testApplicationStart() {
 		// Code to test if the application starts correctly
@@ -372,6 +408,29 @@ public class EndtoEndapplicationTestcases {
 					// Code to test system restoration functionality
 					System.out.println("System restoration tested successfully.");
 				}
+	
+@AfterMethod
+
+public void tearDown() {
+	// Code to clean up after tests
+	System.out.println("Cleaning up after tests.");
+}
+	@AfterTest
+	public void afterTest() {
+		// Code to run after all tests in the class
+		System.out.println("Running after all tests in the class.");
+	}
+	@AfterClass	
+	public void afterClass() {
+		// Code to run after all test methods in this class
+		System.out.println("Running after all test methods in this class.");
+	}
+	@AfterSuite
+	public void afterSuite() {
+		// Code to clean up the test environment
+		System.out.println("Cleaning up the test environment.");
+	}
+						
 				
 				
 }
