@@ -3,19 +3,80 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="maven_diares.MAven_single.EndtoEndapplicationTestcases">
+      <class name="maven_diares.MAven_single.EndtoEndapplicationTestcasesTest">
         <methods>
-          <include name="afterTest"/>
-          <include name="afterSuite"/>
-          <include name="initialize"/>
-          <include name="setup"/>
-          <include name="testApplicationShutdown"/>
-          <include name="afterClass"/>
-          <include name="tearDown"/>
-          <include name="beforeMethod"/>
-          <include name="beforeClass"/>
+          <include name="testUserLoginTest"/>
+          <include name="testSystemMaintainabilityTest"/>
+          <include name="testSystemNotificationsTest"/>
+          <include name="testSystemBackupTest"/>
+          <include name="testComplianceChecksTest"/>
+          <include name="testNotificationSystemTest"/>
+          <include name="testAPIIntegrationTest"/>
+          <include name="testDataSynchronizationTest"/>
+          <include name="testDataBackupTest"/>
+          <include name="testIntegrationWithLegacySystemsTest"/>
+          <include name="testSystemCompatibilityTest"/>
+          <include name="testRealTimeDataProcessingTest"/>
+          <include name="testFeatureToggleTest"/>
+          <include name="testDatabaseConnectionTest"/>
+          <include name="testSystemAlertingTest"/>
+          <include name="testSystemPortabilityTest"/>
+          <include name="testDataSubmissionTest"/>
+          <include name="testLoggingAndMonitoringTest"/>
+          <include name="testDataEncryptionTest"/>
+          <include name="testSystemMigrationTest"/>
+          <include name="testUserAnalyticsTest"/>
+          <include name="testSystemConfigurabilityTest"/>
+          <include name="testSystemScalabilityTest"/>
+          <include name="testVersionControlTest"/>
+          <include name="testSystemReliabilityTest"/>
+          <include name="testThirdPartyIntegrationsTest"/>
+          <include name="testSystemIntegrationTest"/>
+          <include name="testErrorHandlingTest"/>
+          <include name="testMultiUserScenariosTest"/>
+          <include name="testSystemDeploymentTest"/>
+          <include name="testSystemSecurityTest"/>
+          <include name="testUserExperienceTest"/>
+          <include name="testSystemPerformanceTest"/>
+          <include name="testUserPreferencesTest"/>
+          <include name="testSystemRecoveryTest"/>
+          <include name="testCrossPlatformCompatibilityTest"/>
+          <include name="testLocalizationTest"/>
+          <include name="testSystemExtensibilityTest"/>
+          <include name="testSystemInteroperabilityTest"/>
+          <include name="testSystemDocumentationTest"/>
+          <include name="testSystemResourceUtilizationTest"/>
+          <include name="testDataRetrievalTest"/>
+          <include name="testUserInterfaceResponsivenessTest"/>
+          <include name="testUserRegistrationTest"/>
+          <include name="testUIComponentsTest"/>
+          <include name="testErrorLoggingTest"/>
+          <include name="testSystemMonitoringTest"/>
+          <include name="testConfigurationSettingsTest"/>
+          <include name="testUserLogoutTest"/>
+          <include name="testApplicationShutdownTest"/>
+          <include name="testLoadBalancingTest"/>
+          <include name="testSessionManagementTest"/>
+          <include name="testSystemTestabilityTest"/>
+          <include name="testAuditTrailTest"/>
+          <include name="testDataMigrationTest"/>
+          <include name="testPerformanceMetricsTest"/>
+          <include name="testSystemReusabilityTest"/>
+          <include name="testSecurityFeaturesTest"/>
+          <include name="testApplicationUpdateTest"/>
+          <include name="testScalabilityTest"/>
+          <include name="testUserFeedbackTest"/>
+          <include name="testSystemLoggingTest"/>
+          <include name="testAccessibilityFeaturesTest"/>
+          <include name="testSystemModularityTest"/>
+          <include name="testBackupAndRestoreTest"/>
+          <include name="testSystemRestorationTest"/>
+          <include name="testApplicationStartTest"/>
+          <include name="testDataValidationTest"/>
+          <include name="testDatarchivingTest"/>
+          <include name="testSystemUsabilityTest"/>
         </methods>
-      </class> <!-- maven_diares.MAven_single.EndtoEndapplicationTestcases -->
+      </class> <!-- maven_diares.MAven_single.EndtoEndapplicationTestcasesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

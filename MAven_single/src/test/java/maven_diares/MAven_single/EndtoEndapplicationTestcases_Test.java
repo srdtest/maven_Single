@@ -21,7 +21,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class EndtoEndapplicationTestcases {
+public class EndtoEndapplicationTestcases_Test {
 
 	@BeforeSuite
 	public void setup() {
