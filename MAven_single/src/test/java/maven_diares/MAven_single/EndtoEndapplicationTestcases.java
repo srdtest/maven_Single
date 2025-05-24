@@ -16,6 +16,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class EndtoEndapplicationTestcases {
@@ -41,52 +44,62 @@ public class EndtoEndapplicationTestcases {
 		// Code to run before each test method
 		System.out.println("Running before each test method.");
 	}
-	@Test
+	@Test(priority = 0, groups = {"smoke", "regression"})
 	public void testApplicationStart() {
 		// Code to test if the application starts correctly
 		System.out.println("Application started successfully.");
+		Assert.assertTrue(true);
 	}
-	@Test
-	public void testUserLogin() {
-		// Code to test user login functionality
-		System.out.println("User logged in successfully.");
+	
+	@Test(priority = 10, groups = {"smoke", "regression"}, dependsOnMethods = {"testApplicationStart"})
+	@Parameters ({"username", "password"})
+	public void testUserLogin( @Optional("Sriram") String username, @Optional("password")String password) {
+		// Code to test user login functionalit
+		System.out.println("User logged in successfully with %S and %s."+username + " " + password);
 	}
-	@Test
+	@Test(priority = 1, groups = {"smoke", "regression"}, dependsOnMethods = {"testUserLogin"})
 	public void testUserRegistration() {
 		// Code to test user registration functionality
-		System.out.println("User registered successfully.");
+		System.out.println("User registered successfully."+Thread.currentThread().getId());
 	}
 	@Test
 	public void testDataRetrieval() {
 		// Code to test data retrieval functionality
-		System.out.println("Data retrieved successfully.");
+		System.out.println("Data retrieved successfully."+Thread.currentThread().getId());
 	}
-	@Test
-	public void testDataSubmission() {
+	
+	@DataProvider(name = "testData")
+	public Object[][] testData() {
+		return new Object[][] { { "data1", "value1" }, { "data2", "value2" }, { "data3", "value3" } };
+	}
+	@Test(dataProvider = "testData")
+	public void testDataSubmission( String dataName, String dataValue) {
 		// Code to test data submission functionality
-		System.out.println("Data submitted successfully.");
+		System.out.println("Data submitted successfully: " + dataName + " = " + dataValue + ". Thread ID: " + Thread.currentThread().getId());
+		System.out.println("Data submitted successfully."+	Thread.currentThread().getId());
 	}
-	@Test
+	@Test( retryAnalyzer = retryfailed.class)
 	public void testApplicationShutdown() {
 		// Code to test if the application shuts down correctly
-		System.out.println("Application shut down successfully.");
+		System.out.println("Application shut down successfully."+Thread.currentThread().getId());
+	//Assert.assertTrue(false);
 	}
 	@Test
 	public void testErrorHandling() {
 		// Code to test error handling functionality
-		System.out.println("Error handling tested successfully.");
+		System.out.println("Error handling tested successfully."+	Thread.currentThread().getId());
 	}
 	@Test
 	public void testPerformanceMetrics() {
 		// Code to test performance metrics functionality
-		System.out.println("Performance metrics tested successfully.");
+		System.out.println("Performance metrics tested successfully."+    Thread.currentThread().getId());
 	}
 	@Test
 	public void testSecurityFeatures() {
 		// Code to test security features functionality
-		System.out.println("Security features tested successfully.");
+		System.out.println("Security features tested successfully."+	Thread.currentThread().getId());
 	}
-	@Test	
+	@Test	(priority = 5, groups = {"smoke", "regression"}, dependsOnMethods = {"testUserLogin"})
 	public void testUserLogout() {
 		// Code to test user logout functionality
 		System.out.println("User logged out successfully.");
@@ -94,7 +107,7 @@ public class EndtoEndapplicationTestcases {
 	@Test	
 	public void testApplicationUpdate() {
 		// Code to test application update functionality
-		System.out.println("Application updated successfully.");
+		System.out.println("Application updated successfully."+    Thread.currentThread().getId());
 	}
 	@Test	
 	public void testDatabaseConnection() {
@@ -106,7 +119,7 @@ public class EndtoEndapplicationTestcases {
 		// Code to test API integration functionality
 		System.out.println("API integration tested successfully.");
 	}
-	@Test	
+	@Test(priority = -15, invocationCount = 10)	
 	public void testUIComponents() {
 		// Code to test UI components functionality
 		System.out.println("UI components tested successfully.");
@@ -381,12 +394,12 @@ public class EndtoEndapplicationTestcases {
 				System.out.println("System integration tested successfully.");
 					
 			}
-			@Test
+			@Test(priority = 0)
 			public void testSystemMonitoring() {
 				// Code to test system monitoring functionality
 				System.out.println("System monitoring tested successfully.");
 			}	
-			@Test
+			@Test(priority = 1)
 			public void testSystemLogging() {
 				// Code to test system logging functionality
 				System.out.println("System logging tested successfully.");
